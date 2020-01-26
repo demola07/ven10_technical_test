@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const connectDB = require('./config/db');
 const productRouter = require('./routes/product');
 
@@ -23,6 +24,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/images', express.static('images'));
+// app.use('/images', express.static(path.join(__dirname, '/images')));
 app.use('/api/product', productRouter);
 
 module.exports = app;

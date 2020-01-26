@@ -25,13 +25,17 @@ exports.getOneProduct = (req, res, next) => {
 };
 
 exports.createProduct = (req, res, next) => {
+  console.log('create');
+  console.log(req.body);
+  console.log(req.file);
   const product = new Product({
     id: req.body.id,
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
     category: req.body.category,
-    color: req.body.color
+    color: req.body.color,
+    productImage: req.file.path
   });
 
   product

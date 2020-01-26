@@ -1,9 +1,13 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
 const connectDB = require('./config/db');
 const productRouter = require('./routes/product');
 
 // Database Connection
 connectDB();
+
+//Initialze express bodyparser middleware
+app.use(express.json({ extended: false }));
 
 //CORS
 app.use((req, res, next) => {
@@ -19,12 +23,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res) => {
-  res.json({
-    message: 'Everything is working well'
-  });
-});
-
-app.use('api/product', productRouter);
+app.use('/api/product', productRouter);
 
 module.exports = app;

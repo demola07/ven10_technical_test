@@ -41,7 +41,7 @@ The REST API to the app is described below.
 
 `http://localhost:5000/api/product`
 
-## Get a specific Thing
+## Get a specific Product
 
 ### Request
 
@@ -49,7 +49,7 @@ The REST API to the app is described below.
 
 `http://localhost:5000/api/product/id`
 
-## Create another new Thing
+## Create a Product
 
 ### Request
 

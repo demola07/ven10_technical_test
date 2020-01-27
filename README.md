@@ -39,7 +39,7 @@ The REST API to the app is described below.
 
 `GET /api/product`
 
-http://localhost:5000/api/product
+`http://localhost:5000/api/product`
 
 ## Get a specific Thing
 
@@ -47,7 +47,7 @@ http://localhost:5000/api/product
 
 `GET /api/product/id`
 
-http://localhost:5000/api/product/id
+`http://localhost:5000/api/product/id`
 
 ## Create another new Thing
 
@@ -55,4 +55,4 @@ http://localhost:5000/api/product/id
 
 `POST /api/product`
 
-http://localhost:5000/api/product
+`http://localhost:5000/api/product`

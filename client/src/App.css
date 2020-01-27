@@ -1,42 +1,3 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
 /* Global Styles */
 :root {
   --primary-color: #17a2b8;
@@ -60,10 +21,6 @@ body {
   color: #333;
 }
 
-/* img {
-  width: 100%;
-} */
-
 /* Products Page */
 .product-heading {
   text-align: center;
@@ -81,13 +38,7 @@ body {
   height: 200px;
 }
 
-/* .product-img {
-  border-radius: 50%;
-  width: 240px;
-  max-width: 100%;
-} */
 .product {
-  /* border: 1px solid #28a745; */
   max-width: 500px;
   width: 70%;
   padding: 0.5rem;
@@ -97,7 +48,6 @@ body {
 }
 
 .product-info {
-  /* border: 1px solid #dc3545; */
   max-width: 500px;
   width: 70%;
   justify-content: space-evenly;
@@ -267,4 +217,55 @@ body {
     max-width: 100%;
     margin-left: 0;
   }
+}
+
+/*Product Form */
+.overlay {
+  margin-top: 50px;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.head h1 {
+  font-size: 45px;
+}
+small {
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.overlay form {
+  margin-left: 25%;
+}
+
+.overlay input[type='text'],
+.overlay input[type='number'] {
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.file input[type='file'] {
+  padding: 10px;
+  font-size: 20px;
+}
+input[type='submit'] {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 50%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+input::placeholder {
+  font-size: 17px;
+  font-style: italic;
 }

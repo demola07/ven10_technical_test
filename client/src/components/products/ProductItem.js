@@ -1,16 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ProductItem({ product: { id, name, price, productImage } }) {
   return (
     <div className='product-grid'>
       <div className='product'>
-        <img className='product-img' src={productImage} alt='productImage' />
+        <h2>{name}</h2>
+        {/* <img className='product-img' src={productImage} alt='productImage' /> */}
       </div>
       <div className='product-info'>
-        <p>{id}</p>
-        <h2>{name}</h2>
-        <p>{price}</p>
-        <button className='preview'>Preview Item</button>
+        <p id='id'>id: {id}</p>
+        <p id='price'>Price: ${price}</p>
+        <Link to={`/${id}`} className='preview'>
+          Preview Item
+        </Link>
       </div>
     </div>
   );

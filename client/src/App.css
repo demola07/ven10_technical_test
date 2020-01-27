@@ -84,14 +84,22 @@ body {
 }
 .para {
   text-align: center;
+  margin: 1.5em 0;
 }
 
 .add-item {
+  background: #c3cae1;
+  color: #fff;
   cursor: pointer;
   margin: 0 auto;
-  padding: 1.2rem;
+  padding: 1rem;
   border: none;
   margin-bottom: 2rem;
+  text-decoration: none;
+  border-radius: 10%;
+}
+.add-item:hover {
+  background: #343140;
 }
 
 /* Product Page */
@@ -119,11 +127,19 @@ body {
 .container .imgBx {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
   height: 100%;
   background: #006dbc;
+}
+#pid,
+#color {
+  margin: 1.9em;
+  color: #fff;
+  font-style: italic;
+  font-weight: bolder;
 }
 
 .container .imgBx img {

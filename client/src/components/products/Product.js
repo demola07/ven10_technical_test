@@ -44,6 +44,8 @@ export class Product extends Component {
               src={productImage}
               alt='productImage'
             />
+            <p id='pid'>Product id: {id}</p>
+            <p id='color'>Available color: {color}</p>
           </div>
           <div className='details'>
             <div className='content'>

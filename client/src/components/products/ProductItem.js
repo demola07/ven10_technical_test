@@ -6,7 +6,6 @@ function ProductItem({ product: { id, name, price, productImage } }) {
     <div className='product-grid'>
       <div className='product'>
         <h2>{name}</h2>
-        {/* <img className='product-img' src={productImage} alt='productImage' /> */}
       </div>
       <div className='product-info'>
         <p id='id'>id: {id}</p>

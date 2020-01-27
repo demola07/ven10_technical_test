@@ -29,7 +29,7 @@ export class Products extends Component {
         <h1 className='product-heading'>Products Display</h1>
         <p className='para'>
           <Link to='/ProductForm' className='add-item'>
-            AddItem
+            Add New Item
           </Link>
         </p>
         <div>

@@ -5,42 +5,142 @@ export class productForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      id: '',
+      name: '',
+      description: '',
+      price: null,
+      category: '',
+      color: '',
+      productImage: null
+    };
   }
 
+  onChangeHandler = event => {
+    this.setState({ [event.target.name]: event.target.value });
+    console.log(this.state);
+  };
+
+  onChangeFileHandler = event => {
+    console.log(event.target.files[0]);
+    this.setState({
+      productImage: event.target.files[0]
+    });
+  };
+
+  onSubmitHandler = async event => {
+    event.preventDefault();
+    const {
+      id,
+      name,
+      description,
+      price,
+      category,
+      productImage,
+      color
+    } = this.state;
+    try {
+      const formData = new FormData();
+      formData.append('productImage', productImage);
+      formData.append('id', id);
+      formData.append('name', name);
+      formData.append('description', description);
+      formData.append('price', price);
+      formData.append('category', category);
+      formData.append('color', color);
+
+      const res = axios.post('/api/product', formData, {
+        headers: { 'content-type': 'multipart/form-data' }
+      });
+      console.log(res);
+      this.setState({
+        id: '',
+        name: '',
+        description: '',
+        price: null,
+        category: '',
+        color: '',
+        productImage: null
+      });
+      alert('File Upload Successfull.');
+    } catch (error) {
+      alert('File Upload Unsuccessfull...Please try again');
+      console.error(error);
+    }
+  };
   render() {
+    const { id, name, description, price, category, color, file } = this.state;
+
     return (
       <div className='overlay'>
         <div className='head'>
           <h1>Add a Product </h1>
           <small>*All fields are compulsory</small>
         </div>
-        <form>
-          <input type='text' name='id' placeholder='Enter id' /> <br />
-          <input type='text' name='name' placeholder='Name of Product' />
+
+        <form onSubmit={this.onSubmitHandler}>
+          <input
+            type='text'
+            name='id'
+            value={id}
+            placeholder='Enter id'
+            onChange={this.onChangeHandler}
+            required
+          />{' '}
           <br />
           <input
             type='text'
+            name='name'
+            value={name}
+            placeholder='Name of Product'
+            onChange={this.onChangeHandler}
+            required
+          />
+          <br />
+          <input
+            type='text'
+            value={description}
             name='description'
             placeholder='Enter Description of Product'
+            onChange={this.onChangeHandler}
+            required
           />
           <br />
           <input
             type='number'
             name='price'
+            value={price}
             placeholder='Enter Price of Product ($)'
+            onChange={this.onChangeHandler}
+            required
           />
           <br />
           <input
             type='text'
             name='category'
-            placeholder='Enter Category Product Belongs to'
+            value={category}
+            placeholder='Enter Product Category'
+            onChange={this.onChangeHandler}
+            required
           />
           <br />
-          <input type='text' name='color' placeholder='Enter Product color' />
+          <input
+            type='text'
+            value={color}
+            name='color'
+            placeholder='Enter Product color'
+            onChange={this.onChangeHandler}
+            required
+          />
           <br />
           <div className='file'>
-            <input type='file' id='cname' name='cardname' />
+            <input
+              type='file'
+              name='productImage'
+              required
+              accept='image/png, image/jpeg'
+              onChange={this.onChangeFileHandler}
+            />
           </div>
           <input type='submit' value='Post' />
         </form>

@@ -10,7 +10,6 @@ function App() {
     <Router>
       <Fragment>
         <Switch>
-          {/* <Products></Products> */}
           <Route exact path='/' component={Products} />
           <Route exact path='/productForm' component={ProductForm} />
           <Route exact path='/:id' component={Product} />

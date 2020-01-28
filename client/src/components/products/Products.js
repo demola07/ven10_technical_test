@@ -15,7 +15,6 @@ export class Products extends Component {
   getData = async () => {
     const res = await axios.get('/api/product');
     this.setState({ products: res.data });
-    console.log(this.state.products);
   };
 
   componentDidMount() {

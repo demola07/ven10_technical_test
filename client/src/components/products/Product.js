@@ -13,7 +13,6 @@ export class Product extends Component {
 
   getProduct = async () => {
     const res = await axios.get(`/api/product/${this.props.match.params.id}`);
-    console.log(res.data);
     this.setState({
       product: res.data
     });

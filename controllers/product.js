@@ -1,6 +1,6 @@
 const Product = require('../models/product');
 
-exports.getAllProducts = (req, res, next) => {
+exports.getAllProducts = async (req, res, next) => {
   Product.find()
     .then(products => {
       res.status(200).json(products);
@@ -12,7 +12,7 @@ exports.getAllProducts = (req, res, next) => {
     });
 };
 
-exports.getOneProduct = (req, res, next) => {
+exports.getOneProduct = async (req, res, next) => {
   Product.findOne({
     id: req.params.id
   })
@@ -25,8 +25,6 @@ exports.getOneProduct = (req, res, next) => {
 };
 
 exports.createProduct = (req, res, next) => {
-  console.log(req.body);
-  console.log(req.file);
   const product = new Product({
     id: req.body.id,
     name: req.body.name,

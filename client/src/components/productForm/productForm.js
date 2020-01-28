@@ -69,7 +69,7 @@ export class productForm extends Component {
     }
   };
   render() {
-    const { id, name, description, price, category, color, file } = this.state;
+    const { id, name, description, price, category, color } = this.state;
 
     return (
       <div className='overlay'>
